@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Comprensión Lectora</title>
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> 
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>📖 Quiz de Comprensión Lectora</h1>
+    </header>
+
+    <main>
+        <section id="reading-section">
+            <h2>Lo que nuestras mascotas nos regalan</h2>
+            <div id="reading-text-container"></div>
+        </section>
+
+        <section id="quiz-section">
+            <h2>¡Hora del Cuestionario!</h2>
+            <div id="score-container">
+                Tu Puntaje: <span id="score">0</span> / <span id="total-questions">0</span>
+            </div>
+            
+            <div id="questions-container"></div>
+
+            <button id="submit-btn" onclick="submitQuiz()">Revisar Respuestas</button>
+            <p id="feedback-message" style="text-align: center; margin-top: 20px; font-weight: bold; color: green; display: none;">¡Quiz completado! Revisa tu puntaje.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

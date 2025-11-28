@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+
+    /* --- CAMBIOS PARA EL FONDO ESTILO RUGRATS --- */
+    background-color: #eef2f7; /* Color de fallback si la imagen no carga */
+    background-image: url('background.jpg'); /* ¡ACTUALIZADO: Tu imagen! */
+    background-repeat: repeat; /* Para que la imagen se repita y cubra todo */
+    background-size: 200px 200px; /* Ajusta el tamaño del patrón si es necesario */
+    background-attachment: fixed; /* Opcional: para que el fondo no se desplace con el scroll */
+    /* --- FIN CAMBIOS DE FONDO --- */
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9); /* Ligeramente transparente para que se vea el fondo */
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: #34495e;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+/* --- ESTILOS DE LECTURA (MODIFICADOS) --- */
+#reading-text-container #unified-text {
+    line-height: 1.7;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-left: 4px solid #3498db;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+}
+
+#reading-text-container #unified-text p {
+    margin: 0 0 1em 0;
+    padding: 0;
+    border-left: none; 
+    background-color: transparent; 
+}
+/* --- FIN ESTILOS DE LECTURA --- */
+
+#quiz-section {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed #ccc;
+}
+
+#score-container {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    padding: 10px;
+    border: 2px solid #2ecc71;
+    border-radius: 5px;
+    background-color: #ecf8f1;
+    color: #2ecc71;
+}
+
+.level-header {
+    color: #e74c3c;
+    border-bottom: 1px solid #f9dad7;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.question-block {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.question-text {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.question-number {
+    color: #3498db;
+    margin-right: 5px;
+}
+
+label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+label:hover {
+    background-color: #f0f0f0;
+}
+
+input[type="radio"] {
+    margin-right: 8px;
+}
+
+.correct {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.incorrect {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+#submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 30px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submit-btn:hover:not(:disabled) {
+    background-color: #2980b9;
+}
+
+#submit-btn:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
