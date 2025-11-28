@@ -3,14 +3,11 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-
-    /* --- CAMBIOS PARA EL FONDO ESTILO RUGRATS --- */
-    background-color: #eef2f7; /* Color de fallback si la imagen no carga */
-    background-image: url('background.jpg'); /* ¡ACTUALIZADO: Tu imagen! */
-    background-repeat: repeat; /* Para que la imagen se repita y cubra todo */
-    background-size: 200px 200px; /* Ajusta el tamaño del patrón si es necesario */
-    background-attachment: fixed; /* Opcional: para que el fondo no se desplace con el scroll */
-    /* --- FIN CAMBIOS DE FONDO --- */
+    background-color: #eef2f7;
+    background-image: url('background.jpg');
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    background-attachment: fixed;
 }
 
 header {
@@ -22,10 +19,10 @@ header {
 }
 
 main {
-    max-width: 900px;
+    max-width: 900px; 
     margin: 30px auto;
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.9); /* Ligeramente transparente para que se vea el fondo */
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 }
@@ -36,7 +33,6 @@ h2 {
     padding-bottom: 10px;
 }
 
-/* --- ESTILOS DE LECTURA (MODIFICADOS) --- */
 #reading-text-container #unified-text {
     line-height: 1.7;
     margin-bottom: 15px;
@@ -52,7 +48,6 @@ h2 {
     border-left: none; 
     background-color: transparent; 
 }
-/* --- FIN ESTILOS DE LECTURA --- */
 
 #quiz-section {
     margin-top: 40px;
@@ -145,4 +140,40 @@ input[type="radio"] {
 #submit-btn:disabled {
     background-color: #bdc3c7;
     cursor: not-allowed;
+}
+
+@media screen and (max-width: 600px) {
+    
+    header h1 {
+        font-size: 1.5em;
+    }
+    
+    main {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    #reading-text-container #unified-text {
+        font-size: 0.95em;
+        padding: 10px 15px;
+    }
+
+    #score-container {
+        font-size: 1.3em;
+        padding: 8px;
+    }
+    
+    .question-block {
+        font-size: 0.95em;
+        padding: 10px;
+    }
+    
+    label {
+        font-size: 0.95em;
+    }
+
+    #submit-btn {
+        padding: 10px;
+        font-size: 1.1em;
+    }
 }
