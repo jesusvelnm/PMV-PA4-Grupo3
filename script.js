@@ -1,5 +1,3 @@
-// --- 1. CONTENIDO EN ESPAÑOL (TEXTO Y PREGUNTAS) ---
-
 const readingText = `
     <div id="unified-text">
         <p>¿Sabes el significado de la palabra mascota? Tu respuesta probablemente será: “Por
@@ -42,7 +40,6 @@ const readingText = `
 `;
 
 const quizData = [
-    // ------------------- NIVEL LITERAL -------------------
     {
         level: "Nivel Literal",
         question: "¿Qué significa la palabra mascota según el diccionario?",
@@ -92,7 +89,6 @@ const quizData = [
         correctAnswer: "Nos hace más humanos",
         name: "l7"
     },
-    // ------------------- NIVEL INFERENCIAL -------------------
     {
         level: "Nivel Inferencial",
         question: "¿Por qué se dice que las mascotas tienen virtudes mágicas?",
@@ -144,23 +140,15 @@ const quizData = [
     }
 ];
 
-// --- 2. LÓGICA DEL QUIZ ---
-
 let score = 0;
 const questionsContainer = document.getElementById('questions-container');
 const scoreDisplay = document.getElementById('score');
 const totalQuestionsDisplay = document.getElementById('total-questions');
 const readingTextContainer = document.getElementById('reading-text-container');
 
-// Inicialización: Carga el texto y las preguntas
 function initializeQuiz() {
-    // 1. Cargar el texto de lectura
     readingTextContainer.innerHTML = readingText;
-    
-    // 2. Cargar las preguntas del quiz
     loadQuestions();
-    
-    // 3. Mostrar el total de preguntas
     totalQuestionsDisplay.textContent = quizData.length;
 }
 
@@ -168,7 +156,6 @@ function loadQuestions() {
     let currentLevel = "";
     
     quizData.forEach((item, index) => {
-        // Agrega un subtítulo para el nuevo nivel si cambia
         if (item.level !== currentLevel) {
             const levelHeader = document.createElement('h3');
             levelHeader.textContent = item.level;
@@ -196,7 +183,7 @@ function loadQuestions() {
 }
 
 function submitQuiz() {
-    score = 0; // Reiniciar puntaje
+    score = 0;
     const questionBlocks = document.querySelectorAll('.question-block');
     
     quizData.forEach((item, index) => {
@@ -204,10 +191,8 @@ function submitQuiz() {
         const selectedOption = document.querySelector(selector);
         const block = questionBlocks[index];
 
-        // Resetear estilos anteriores
         block.classList.remove('correct', 'incorrect');
         
-        // Encontrar la etiqueta correcta para resaltar
         const correctLabel = Array.from(block.querySelectorAll('label')).find(label => {
             return label.querySelector('input').value === item.correctAnswer;
         });
@@ -218,7 +203,6 @@ function submitQuiz() {
                 block.classList.add('correct');
             } else {
                 block.classList.add('incorrect');
-                // Si la respuesta es incorrecta, resaltar la correcta en verde para feedback
                 if (correctLabel) {
                     correctLabel.style.backgroundColor = '#d4edda'; 
                     correctLabel.style.fontWeight = 'bold';
@@ -226,21 +210,17 @@ function submitQuiz() {
             }
         } 
         
-        // Deshabilitar todas las opciones para evitar más clics
         document.querySelectorAll(`input[name="${item.name}"]`).forEach(radio => {
             radio.disabled = true;
         });
     });
 
-    // Actualizar puntaje final
     scoreDisplay.textContent = score;
 
-    // Mostrar mensaje de feedback y deshabilitar botón
     document.getElementById('feedback-message').style.display = 'block';
     document.getElementById('submit-btn').disabled = true;
     
     alert(`¡Quiz completado! Tu puntaje es ${score} de ${quizData.length}.`);
 }
 
-// Inicia el quiz cuando la página está lista
 window.onload = initializeQuiz;
